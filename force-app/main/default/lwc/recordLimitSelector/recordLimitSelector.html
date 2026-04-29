@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Record Limit Selector" icon-name="standard:settings">
+        <div class="slds-m-around_medium">
+            <lightning-combobox
+                name="recordLimit"
+                label="Select Number of Records"
+                value={recordLimit}
+                placeholder="Select number of records"
+                options={limitOptions}
+                onchange={handleLimitChange}>
+            </lightning-combobox>
+            
+            <div class="slds-m-top_small slds-text-body_small slds-text-color_weak">
+                This selector is synchronized with the account list container.
+            </div>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,33 @@
+<template>
+    <lightning-card title="Child Component" icon-name="standard:contact">
+        <div class="slds-m-around_medium">
+            <lightning-textarea 
+                label="Display Value (Child)" 
+                value={displayValue} 
+                readonly>
+            </lightning-textarea>
+            
+            <div class="slds-m-top_medium">
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_10-of-12">
+                        <lightning-input 
+                            type="text" 
+                            label="Enter Value" 
+                            value={inputValue}
+                            onchange={handleInputChange}>
+                        </lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_2-of-12">
+                        <lightning-button 
+                            variant="brand" 
+                            label="Submit" 
+                            title="Submit" 
+                            onclick={handleButtonClick}
+                            class="slds-m-top_large">
+                        </lightning-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>

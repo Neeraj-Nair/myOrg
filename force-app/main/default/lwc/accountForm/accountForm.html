@@ -1,0 +1,95 @@
+<template>
+    <lightning-card title={cardTitle} icon-name="standard:account">
+        <div class="slds-m-around_medium">
+            <lightning-record-edit-form
+                object-api-name="Account"
+                record-id={recordId}
+                onsuccess={handleSuccess}
+                onerror={handleError}>
+                
+                <lightning-messages></lightning-messages>
+                
+                <div class="slds-grid slds-wrap slds-gutters">
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                        <lightning-input-field
+                            field-name="Name"
+                            required>
+                        </lightning-input-field>
+                    </div>
+                    
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                        <lightning-input-field
+                            field-name="AnnualRevenue">
+                        </lightning-input-field>
+                    </div>
+                    
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                        <lightning-input-field
+                            field-name="BillingStreet">
+                        </lightning-input-field>
+                    </div>
+                    
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                        <lightning-input-field
+                            field-name="BillingCity">
+                        </lightning-input-field>
+                    </div>
+                    
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                        <lightning-input-field
+                            field-name="BillingState">
+                        </lightning-input-field>
+                    </div>
+                    
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                        <lightning-input-field
+                            field-name="BillingPostalCode">
+                        </lightning-input-field>
+                    </div>
+                    
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                        <lightning-input-field
+                            field-name="BillingCountry">
+                        </lightning-input-field>
+                    </div>
+                    
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                        <lightning-input-field
+                            field-name="Phone">
+                        </lightning-input-field>
+                    </div>
+                    
+                    <div class="slds-col slds-size_1-of-1">
+                        <lightning-input-field
+                            field-name="Industry">
+                        </lightning-input-field>
+                    </div>
+                </div>
+                
+                <div class="slds-m-top_medium">
+                    <lightning-button
+                        variant="brand"
+                        type="submit"
+                        label={submitButtonLabel}>
+                    </lightning-button>
+                    <lightning-button
+                        variant="neutral"
+                        label="Cancel"
+                        onclick={handleCancel}
+                        class="slds-m-left_small">
+                    </lightning-button>
+                </div>
+            </lightning-record-edit-form>
+            
+            <template if:true={showSuccessMessage}>
+                <div class="slds-notify slds-notify_toast slds-theme_success slds-m-top_medium" role="status">
+                    <div class="slds-notify__content">
+                        <h2 class="slds-text-heading_small">
+                            {successMessage}
+                        </h2>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

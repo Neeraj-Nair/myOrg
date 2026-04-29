@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Parent Component" icon-name="standard:account">
+        <div class="slds-m-around_medium">
+            <lightning-textarea 
+                label="Display Value (Parent)" 
+                value={displayText} 
+                readonly>
+            </lightning-textarea>
+            
+            <div class="slds-m-top_medium">
+                <c-child onvaluechange={handleValueChange}></c-child>
+            </div>
+        </div>
+    </lightning-card>
+</template>

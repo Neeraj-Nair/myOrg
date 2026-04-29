@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Grandparent Component" icon-name="standard:organization">
+        <div class="slds-m-around_medium">
+            <lightning-textarea 
+                label="Display Value (Grandparent)" 
+                value={displayValue} 
+                readonly>
+            </lightning-textarea>
+            
+            <div class="slds-m-top_medium">
+                <c-parent onvaluechange={handleValueChange}></c-parent>
+            </div>
+        </div>
+    </lightning-card>
+</template>

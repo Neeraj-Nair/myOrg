@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Message channel for new account creation</description>
+    <isExposed>true</isExposed>
+    <lightningMessageFields>
+        <fieldName>recordId</fieldName>
+        <description>The ID of the newly created account</description>
+    </lightningMessageFields>
+    <masterLabel>New Account Created Channel</masterLabel>
+</LightningMessageChannel>

@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Recently Viewed Accounts" icon-name="standard:account">
+        <div class="slds-m-around_medium">
+            <div class="slds-form-element">
+                <label class="slds-form-element__label" for="record-limit-select">
+                    Number of Records to Display
+                </label>
+                <div class="slds-form-element__control">
+                    <lightning-combobox
+                        name="recordLimit"
+                        label="Number of Records"
+                        value={recordLimit}
+                        placeholder="Select number of records"
+                        options={limitOptions}
+                        onchange={handleLimitChange}
+                        variant="label-hidden">
+                    </lightning-combobox>
+                </div>
+            </div>
+            
+            <div class="slds-m-top_medium">
+                <c-account-list record-limit={recordLimit}></c-account-list>
+            </div>
+        </div>
+    </lightning-card>
+</template>

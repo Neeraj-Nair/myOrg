@@ -1,0 +1,32 @@
+<template>
+    <div>
+        <template if:true={accounts.data}>
+            <lightning-datatable
+                key-field="Id"
+                data={accounts.data}
+                columns={columns}
+                hide-checkbox-column
+                onrowaction={handleRowAction}>
+            </lightning-datatable>
+        </template>
+        
+        <template if:true={accounts.error}>
+            <div class="slds-text-color_error">
+                <p>Error loading accounts: {accounts.error.body.message}</p>
+            </div>
+        </template>
+        
+        <template if:true={isLoading}>
+            <lightning-spinner 
+                alternative-text="Loading accounts..." 
+                size="small">
+            </lightning-spinner>
+        </template>
+        
+        <template if:true={noAccounts}>
+            <div class="slds-text-align_center slds-m-vertical_medium">
+                <p>No recently viewed accounts found.</p>
+            </div>
+        </template>
+    </div>
+</template>
